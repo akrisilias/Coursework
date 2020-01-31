@@ -1,0 +1,87 @@
+<body>
+  <div style="text-align: center;">
+<h2>
+    <p>
+      Here you can view all available shops!
+    </p>
+</h2>
+    <br>
+
+    <br><br>
+
+    <h1>Available Shops</h1>
+	  <div style="float: left">
+    Products per page:
+    <select name="view" [(ngModel)]="view">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="20" selected="selected">20</option>
+      <option value="40">40</option>
+    </select>
+    </div>
+    <div style="float: right">
+    Sort by:
+    <select name="sort" [(ngModel)]="sort" (ngModelChange)="getClick()">
+      <option value="id|ASC">ID Ascending</option>
+      <option value="id|DESC" selected="selected">ID Descending</option>
+      <option value="name|ASC">Name Ascending</option>
+      <option value="name|DESC">Name Descending</option>
+    </select>
+    </div>
+    <div style="margin: 0 auto; width: 200px;">
+    Status:
+    <select name="status" [(ngModel)]="status" (ngModelChange)="getClick()">
+      <option value="ALL">All</option>
+      <option value="WITHDRAWN">Withdrawn</option>
+      <option value="ACTIVE" selected="selected">Active</option>
+    </select>
+    </div>
+
+
+    <table  *ngIf="shops" id="shops">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Longtitude</th>
+	    <th>Latitude</th>
+      <th>Withdrawn</th>
+      <th>Tags</th>
+      <th [hidden]=!logged>Action</th>
+    </tr>
+    <tr *ngFor="let shop of shops.shops | paginate: { itemsPerPage: view, currentPage: p}">
+      <td>{{shop.id}}</td>
+      <td>{{shop.name}}</td>
+      <td>{{shop.address}}</td>
+      <td>{{shop.lng}}</td>
+      <td>{{shop.lat}}</td>
+      <td >{{shop.withdrawn}}</td>
+      <td >{{shop.tags}}</td>
+      <td [hidden]=!logged>
+        <input type="image" class="imgButton" src="assets/img/edit_icon.png" [routerLink]="['/shop', shop.id]">
+        <input type="image" class="imgButton" src="assets/img/delete_icon.png" (click)="deleteClick(shop.id)">
+      </td>
+    </tr>
+	</table>
+  <br><br>
+  <br><br>
+  <table [hidden]=!logged align="center">
+	<tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Withdrawn</th>
+      <th>Tags</th>
+    </tr>
+	<tr>
+      <td>Auto</td>
+      <td><input type="text" name="Name" [(ngModel)]="Name"></td>
+      <td><input type="text" name="Address" [(ngModel)]="Address"></td>
+      <td><input type="text" name="Withdrawn" [(ngModel)]="Withdrawn"></td>
+      <td><input type="text" name="Tags" [(ngModel)]="Tags"></td>
+      <td><input type="image" class="imgButton" src="assets/img/add_icon.png" (click)="postClick()"></td>
+    </tr>
+  </table>
+	<h2 [hidden]=!logged align="center">Click the desirable location on the map</h2>
+  <div align="center"><div id="map" class="map" [hidden]=!logged></div></div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>

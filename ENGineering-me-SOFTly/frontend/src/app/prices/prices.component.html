@@ -1,0 +1,72 @@
+<body>
+  <div style="text-align: center;">
+<h2>
+    <p>
+      Here you can find the cheapest products around you!
+    </p>
+</h2>
+
+<p [hidden]=!logged>Are you a volunteer? Click <a routerLink="/price">here</a> to add some prices.<p>
+
+    <br>
+    <div class="form-style-5">
+<form>
+<fieldset>
+<legend><span class="number">1</span> Product Info</legend>
+<input type="text" name="Tags" [(ngModel)]="Tags" placeholder="Search for product or shop">
+<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Date from" name="DateFrom" [(ngModel)]="DateFrom">
+<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Date to" name="DateTo" [(ngModel)]="DateTo">
+</fieldset>
+<fieldset>
+<legend><span class="number">2</span> Location Info</legend>
+<input type="number" name="Distance" [(ngModel)]="Distance" placeholder="Desired distance from you (in kilometers)"/>
+</fieldset>
+Your location:
+<div id="map" class="map"></div>
+<input type="submit" value="Apply" (click)="getClick()"/>
+</form>
+</div>
+<br>
+
+
+<p align="center" [hidden]=!found>Search Results</p>
+<div style="float: left" [hidden]=!found>
+Products per page:
+<select name="view" [(ngModel)]="view">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20" selected="selected">20</option>
+  <option value="40">40</option>
+</select>
+</div>
+<div style="float: right" [hidden]=!found>
+Sort by:
+<select name="sort" [(ngModel)]="sort" (ngModelChange)="sortClick()">
+  <option value="price|ASC" selected="selected">Cheapest First</option>
+  <option value="price|DESC">Cheapest Last</option>
+  <option value="dist|ASC">Closest First</option>
+  <option value="dist|DESC">Closest Last</option>
+  <option value="date|DESC">Recent First</option>
+  <option value="date|ASC">Recent Last</option>
+</select>
+</div>
+
+<table  *ngIf="prices" id="prices">
+<tr>
+  <th>Price (euros)</th>
+  <th>Date</th>
+  <th>Product Name</th>
+  <th>Shop Name</th>
+  <th>Shop Address</th>
+  <th>Shop Distance (km)</th>
+</tr>
+<tr *ngFor="let price of prices.prices | paginate: { itemsPerPage: view, currentPage: p}">
+  <td>{{price.price}}</td>
+  <td>{{price.date}}</td>
+  <td>{{price.productName}}</td>
+  <td>{{price.shopName}}</td>
+  <td>{{price.shopAddress}}</td>
+  <td>{{price.shopDist}}</td>
+</tr>
+</table>
+<pagination-controls (pageChange)="p = $event" [hidden]=!found></pagination-controls>

@@ -1,0 +1,63 @@
+<body>
+  <div style="text-align: center;">
+<h2>
+    <p>
+      Here you can add prices to products
+    </p>
+</h2>
+
+    <br>
+<div class="form-style-5">
+<form>
+<fieldset>
+<legend><span class="number">!</span>Add Price</legend>
+<input type="number" name="Price" [(ngModel)]="Price" placeholder="Enter the price">
+<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Date from" name="DateFrom" [(ngModel)]="DateFrom">
+<input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Date to" name="DateTo" [(ngModel)]="DateTo">
+<input type="number" name="ProductId" [(ngModel)]="ProductId" placeholder="Product ID">
+<input type="number" name="ShopId" [(ngModel)]="ShopId" placeholder="Shop ID">
+</fieldset>
+<input type="submit" value="Apply" (click)="postClick()"/>
+</form>
+<p><font color="red">{{error}}</font></p>
+</div>
+<br>
+
+
+
+<p align="center" [hidden]=!found>Entries added</p>
+<div style="float: left" [hidden]=!found>
+Products per page:
+<select name="view" [(ngModel)]="view">
+  <option value="5">5</option>
+  <option value="10">10</option>
+  <option value="20" selected="selected">20</option>
+  <option value="40">40</option>
+</select>
+</div>
+
+<table  *ngIf="prices" id="prices">
+<tr>
+  <th>Price (euros)</th>
+  <th>Date</th>
+  <th>Product Name</th>
+  <th>Product ID</th>
+  <th>Product Tags</th>
+  <th>Shop ID</th>
+  <th>Shop Name</th>
+  <th>Shop Tags</th>
+  <th>Shop Address</th>
+</tr>
+<tr *ngFor="let price of prices.prices | paginate: { itemsPerPage: view, currentPage: p}">
+  <td>{{price.price}}</td>
+  <td>{{price.date}}</td>
+  <td>{{price.productName}}</td>
+  <td>{{price.productId}}</td>
+  <td>{{price.productTags}}</td>
+  <td>{{price.shopId}}</td>
+  <td>{{price.shopName}}</td>
+  <td>{{price.shopTags}}</td>
+  <td>{{price.shopAddress}}</td>
+</tr>
+</table>
+<pagination-controls (pageChange)="p = $event" [hidden]=!found></pagination-controls>
