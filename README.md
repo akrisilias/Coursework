@@ -1,3 +1,3 @@
 # Coursework
 
-Assignments from courses Neural Networks (.ipynb) and Software Engineering (ENGineering-me-SOFTly/)  during studies in Electrical and Computer Engineering at National Technical University of Athens.
+Assignments from courses Neural Networks and Software Engineering during studies in Electrical and Computer Engineering at National Technical University of Athens.

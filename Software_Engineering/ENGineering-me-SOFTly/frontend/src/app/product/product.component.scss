@@ -1,0 +1,124 @@
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 30px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.button1 {
+  background-color: #ff0000;
+  color: white;
+  border: 3px solid #ff0000;
+}
+
+.button1:hover {
+  background-color: #ff6666;
+  color: white;
+}
+
+.button2 {
+  background-color: #0000ff;
+  color: white;
+  border: 3px solid #0000ff;
+}
+
+.button2:hover {
+  background-color: #6666ff;
+  color: white;
+}
+
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+}
+
+body {
+  //color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;padding: 0;
+
+    li {
+        background: rgb(238, 238, 238);
+        padding: 2em;
+        border-radius: 4px;
+        margin-bottom: 7px;
+        display: grid;
+        grid-template-columns: 60px auto;
+
+        p {
+            font-weight: bold;
+          //  margin-left: 20px;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 100%;
+        }
+    }
+}
+
+#products {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#products td, #products th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: #f2f2f2;}
+
+#products tr:hover {background-color: #ddd;}
+
+#products th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #0033cc;
+  color: white;
+}
+
+img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 35px;
+  height: 35px
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.imgButton {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 35px;
+  height: 35px
+}
+
+.imgButton:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}

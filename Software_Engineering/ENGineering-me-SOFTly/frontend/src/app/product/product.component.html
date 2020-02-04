@@ -1,0 +1,33 @@
+<body>
+  <div style="text-align: center;">
+
+
+    <br><br>
+
+    <div style="position:relative; top:200px;">
+    <h1>Edit Product</h1><br>
+
+    <table id="products">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Withdrawn</th>
+      <th>Tags</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{product.id}}</td>
+      <td><input type="text" name="Name" [(ngModel)]="Name" value="{{product.name}}"></td>
+      <td><input type="text" name="Description" [(ngModel)]="Description" value="{{product.description}}"></td>
+      <td><input type="text" name="Category" [(ngModel)]="Category" value="{{product.category}}"></td>
+      <td><input type="text" name="Withdrawn" [(ngModel)]="Withdrawn" value="{{product.withdrawn}}"></td>
+      <td><input type="text" name="Tags" [(ngModel)]="Tags" value="{{product.tags}}"></td>
+      <td>
+        <input type="image" class="imgButton" src="assets/img/tick_icon.png" (click)="putClick()">
+      </td>
+    </tr>
+
+    </table>
+    </div>

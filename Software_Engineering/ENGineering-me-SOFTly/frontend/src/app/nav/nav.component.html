@@ -1,0 +1,15 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">{{appTitle}}</a>
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/products">Products</a></li>
+        <li><a routerLink="/shops">Shops</a></li>
+        <li><a routerLink="/prices">Prices</a></li>
+        <li [hidden]="this.data.auth != ''"><a routerLink="/login">Log In</a></li>
+        <li [hidden]="this.data.auth == ''"><a routerLink="/logout"><i>{{ this.data.user }}</i></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
