@@ -5,7 +5,7 @@ Assignments from courses Neural Networks and Software Engineering during studies
 ## Neural Networks
 
 - *Polish companies bankruptcy prediction*  
-Prediction of whether a Polish company will bankrupt or not in a five years period.
+Binary classification using Gaussian Naive Bayes, k-Nearest Neighbors and Multi-Layer Perceptron. Feature engineering with various transformers (VarianceThreshold, StandardScaler, RandomOverSampler, PCA) and hypertuning with GridSearchCV.
 - *Content based movies recommender system*  
 bla bla
 - *Functions optimization with Genetic Algorithms*  
