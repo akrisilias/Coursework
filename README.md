@@ -4,14 +4,14 @@ Assignments from courses Neural Networks and Software Engineering during studies
 
 ## Neural Networks
 
-- Polish companies bankruptcy prediction  
+- *Polish companies bankruptcy prediction*  
 bla bla
-- Content based movies recommender system  
+- *Content based movies recommender system*  
 bla bla
-- Functions optimization with Genetic Algorithms  
+- *Functions optimization with Genetic Algorithms*  
 bla bla
 
 ## Software Engineering
 
-- ENGineering-me-SOFTly  
+- *ENGineering-me-SOFTly*  
 bla bla
