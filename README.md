@@ -5,7 +5,7 @@ Assignments from courses Neural Networks and Software Engineering during studies
 ## Neural Networks
 
 - *Polish companies bankruptcy prediction*  
-bla bla
+Prediction of whether a Polish company will bankrupt or not in a five years period.
 - *Content based movies recommender system*  
 bla bla
 - *Functions optimization with Genetic Algorithms*  
