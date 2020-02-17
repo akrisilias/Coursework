@@ -14,4 +14,4 @@ Root approximation for scalable (Schwefel 2.22) and not (Mishra 9) functions usi
 ## Software Engineering
 
 - **ENGineering-me-SOFTly**  
-bla bla
+The Cheapest Gas Prices Nearby; A web-based application, implemented with Angular (front-end) and Spring Framework (back-end).
