@@ -9,7 +9,7 @@ Supervised learning; Binary classification using Gaussian Naive Bayes, k-Nearest
 - **Content based movies recommender system**  
 Unsupervised learning; Clustering using k-Means and SOM (self-organizing map, mainly for visualization).
 - **Functions optimization with Genetic Algorithms**  
-bla bla
+Root approximation for scalable (Schwefel 2.22) and not (Mishra 9) functions using Genetic Algorithms (without gradients).
 
 ## Software Engineering
 
